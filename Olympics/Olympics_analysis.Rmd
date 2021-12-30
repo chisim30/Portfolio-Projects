@@ -1,0 +1,196 @@
+---
+title: "Olympics"
+author: "Chisimdiri"
+date: "12/26/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+library('tidyverse')
+library('ggplot2')
+library('lubridate') #load relevant libraries.
+```
+
+```{r}
+olympics_1 <- read.csv('athlete_events.csv')
+olympics_2 <- read.csv('athletes.csv') #load two data sets into R studio.
+```
+
+```{r}
+str(olympics_1)
+str(olympics_2) #check structure of both data sets.
+```
+
+```{r Data Cleaning}
+olympics_2 <- olympics_2 %>%
+  add_column(ID='NA', .before = 'name')
+olympics_2 <- 
+  olympics_2 %>%
+  rename(Name=name) %>%
+  rename(Team=country) %>%
+  rename(NOC=country_code) %>%
+  rename(Sport=discipline) # Rename columns to match first data set.
+olympics_2 <- 
+  olympics_2 %>%
+  add_column(Sex='NA', .before = 'gender')
+olympics_2$Sex <- ifelse(olympics_2$gender=='Male', 'M', 'F')
+olympics_2 <- 
+  olympics_2 %>%
+  add_column(Games='2020 Summer', .after = 'NOC') %>%
+  add_column(Year='2021', .after = 'Games') %>%
+  add_column(Season='Summer', .after = 'Year') %>%
+  add_column(City='Tokyo', .after = 'Season')# Insert columns to match the format of the first data set.
+olympics_2 <- 
+  olympics_2 %>%
+  add_column(Height='NA', .after = 'Age') %>%
+  add_column(Weight='NA', .after = 'Height') %>%
+  add_column(Event='NA', .after = 'Sport') %>%
+  add_column(Medal='NA', .after = 'Event') # Insert columns to match the format of the first data set.
+olympics_2$ID <- as.numeric(olympics_2$ID)  # cast ID column as numeric so it can stack properly.
+is.numeric(olympics_2$ID)
+olympics_2 <- select(olympics_2, ID, Name, Sex, Age, Height, Weight, Team, NOC, Games, Year, Season, City, Sport, Event, Medal) #select valid columns to merge to the first data set.
+olympics_2$Height <- as.numeric(olympics_2$Height)  # cast Height column as numeric so it can stack properly.
+olympics_2$Weight <- as.numeric(olympics_2$Weight) # cast Weight column as numeric so it can stack properly.
+olympics_2$Year <- as.numeric(olympics_2$Year) # cast Year column as numeric so it can stack properly.
+```
+
+```{r}
+olympics_main <- bind_rows(olympics_1, olympics_2) #bind two data sets to form a single table.
+olympics_main <- olympics_main %>%
+  filter(Season == 'Summer') #filter Olympics data for the summer period, since the analysis is based off of the summer Olympics.
+str(olympics_main)
+is.na(olympics_main$Sport)
+```
+
+```{r}
+aggregate(olympics_main$Year~olympics_main$Sex + olympics_main$Sport, FUN = length)
+
+
+olympics_sports_male_female <- 
+  olympics_main %>%
+  group_by(olympics_main$Sport, olympics_main$Sex) %>%
+  summarise(number_of_male_female = n())
+
+chart_1 <- olympics_sports_male_female %>%
+  rename(Sex=`olympics_main$Sex`)%>%
+  filter(`olympics_main$Sport` =='Artistic Gymnastics'
+         | `olympics_main$Sport` == 'Art Competitions'
+         |  `olympics_main$Sport` == 'Athletics'
+         |  `olympics_main$Sport` == 'Basketball'
+         | `olympics_main$Sport` == 'Boxing'
+         | `olympics_main$Sport` == 'Diving'
+         | `olympics_main$Sport` == 'Figure Skating'
+         | `olympics_main$Sport` == 'Weightlifting'
+         | `olympics_main$Sport` == 'Triathlon'
+         | `olympics_main$Sport` == 'Tennis'
+         | `olympics_main$Sport` == 'Taekwondo'
+         | `olympics_main$Sport` == 'Gymnastics'
+         | `olympics_main$Sport` == 'Surfing'
+         | `olympics_main$Sport` == 'Football'
+         | `olympics_main$Sport` == 'Skateboarding'
+         | `olympics_main$Sport` == 'Handball'
+         | `olympics_main$Sport` == 'Hockey'
+         | `olympics_main$Sport` == 'Sailing'
+         | `olympics_main$Sport` == 'Swimming'
+         | `olympics_main$Sport` == 'Shooting'
+         | `olympics_main$Sport` == 'Volleyball'
+         | `olympics_main$Sport` == 'Water Polo'
+         | `olympics_main$Sport` == 'Wrestling')
+
+chart_1 %>%
+  ggplot(aes(x = chart_1$`olympics_main$Sport`,y = chart_1$number_of_male_female, fill = Sex)) + geom_bar(stat = 'identity') + coord_flip() + labs(x = 'Sport', y = 'Participants_Count', title = 'Gender Balance of Various Sports', color='Sex') 
+
+```
+
+```{r}
+olympics_female <- 
+  olympics_main %>% 
+  filter(olympics_main$Sex =='F') #filter out only female data to perform analysis.
+
+#charts that show the growth in female participation at the Olympic games.
+number_of_female_yearly <- 
+  aggregate(olympics_female$Sex~olympics_female$Year + olympics_female$Season, FUN = length)
+
+number_of_female_yearly %>%
+  ggplot(aes(x = `olympics_female$Year`, y = `olympics_female$Sex`, fill = `olympics_female$Year`)) + geom_smooth() + 
+  labs(x = 'Year', y = 'Participants', title = 'Womens Participation Over the Years')
+#Table to show the number of females represented by each country since the beginning of the Olympic games.
+number_of_female_yearly_2 <- 
+  aggregate(olympics_female$Sex~olympics_female$Team, FUN = length)
+
+#charts that depict the number of females represented by each country since the beginning of the Olympic games. 
+number_of_female_yearly_2_1 <- number_of_female_yearly_2[1:35,]
+
+number_of_female_yearly_2_1 %>%
+  ggplot(aes(x = number_of_female_yearly_2_1$`olympics_female$Team`, y = number_of_female_yearly_2_1$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip() + labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_2 <- number_of_female_yearly_2[36:70,]
+
+number_of_female_yearly_2_2 %>%
+  ggplot(aes(x = number_of_female_yearly_2_2$`olympics_female$Team`, y = number_of_female_yearly_2_2$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_3 <- number_of_female_yearly_2[71:105,]
+
+number_of_female_yearly_2_3 %>%
+  ggplot(aes(x = number_of_female_yearly_2_3$`olympics_female$Team`, y = number_of_female_yearly_2_3$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_4 <- number_of_female_yearly_2[106:140,]
+
+number_of_female_yearly_2_4 %>%
+  ggplot(aes(x = number_of_female_yearly_2_4$`olympics_female$Team`, y = number_of_female_yearly_2_4$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_5 <- number_of_female_yearly_2[141:175,]
+
+number_of_female_yearly_2_5 %>%
+  ggplot(aes(x = number_of_female_yearly_2_5$`olympics_female$Team`, y = number_of_female_yearly_2_5$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_6 <- number_of_female_yearly_2[176:210,]
+
+number_of_female_yearly_2_6 %>%
+  ggplot(aes(x = number_of_female_yearly_2_6$`olympics_female$Team`, y = number_of_female_yearly_2_6$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_7 <- number_of_female_yearly_2[211:245,]
+
+number_of_female_yearly_2_7 %>%
+  ggplot(aes(x = number_of_female_yearly_2_7$`olympics_female$Team`, y = number_of_female_yearly_2_7$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_8 <- number_of_female_yearly_2[246:280,]
+
+number_of_female_yearly_2_8 %>%
+  ggplot(aes(x = number_of_female_yearly_2_8$`olympics_female$Team`, y = number_of_female_yearly_2_8$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_9 <- number_of_female_yearly_2[281:315,]
+
+number_of_female_yearly_2_9 %>%
+  ggplot(aes(x = number_of_female_yearly_2_9$`olympics_female$Team`, y = number_of_female_yearly_2_9$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_10 <- number_of_female_yearly_2[316:350,]
+
+number_of_female_yearly_2_10 %>%
+  ggplot(aes(x = number_of_female_yearly_2_10$`olympics_female$Team`, y = number_of_female_yearly_2_10$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+
+number_of_female_yearly_2_11 <- number_of_female_yearly_2[351:376,]
+
+number_of_female_yearly_2_11 %>%
+  ggplot(aes(x = number_of_female_yearly_2_11$`olympics_female$Team`, y = number_of_female_yearly_2_11$`olympics_female$Sex`)) + geom_bar(stat = 'identity') + coord_flip()+ labs(x = 'Team', y = 'Participants', title = 'Womens Participation By Country')
+```
+
+```{r}
+olympics_male <- 
+  olympics_main %>%
+  filter(olympics_main$Sex == 'M')  #filter out only male data to perform analysis.
+
+number_of_male_yearly <- 
+  aggregate(olympics_male$Sex~olympics_male$Year + olympics_male$Season, FUN = length)
+ 
+#chart to show the growth in male participation at the Olympic games.
+number_of_male_yearly %>%
+  ggplot(aes(x = `olympics_male$Year`, y = `olympics_male$Sex`, fill = `olympics_male$Year`)) + geom_smooth() + labs(x = 'Years', y = 'Participants', title = 'Mens Participation Over the Years')
+```
+
