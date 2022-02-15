@@ -1,0 +1,79 @@
+---
+title: "Taxi Trips"
+author: "Chisimdiri"
+date: "1/24/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load data}
+getwd()
+setwd("C:/Users/Chisim/Desktop/Taxi")
+
+Taxi_2017 <- read.csv("C:/Users/Chisim/Desktop/Taxi/2017_taxi_trips.csv")
+Taxi_2018 <- read.csv("C:/Users/Chisim/Desktop/Taxi/2018_taxi_trips.csv")
+Taxi_2019 <- read.csv("C:/Users/Chisim/Desktop/Taxi/2019_taxi_trips.csv")
+Taxi_2020 <- read.csv("C:/Users/Chisim/Desktop/Taxi/2020_taxi_trips.csv")
+
+
+Taxi_2019 <- select(Taxi_2019,-19)
+Taxi_2020 <- select(Taxi_2020, -19)
+```
+
+```{r}
+Taxi_2017 <- Taxi_2017 %>%
+  filter(Taxi_2017$store_and_fwd_flag != 'Y')
+
+Taxi_2017 <- Taxi_2017 %>%
+  filter(Taxi_2017$trip_type == 1)
+
+Taxi_2017 <- Taxi_2017 %>%
+  filter(Taxi_2017$PULocationID != 265)
+
+Taxi_2017 <- Taxi_2017 %>%
+  filter(Taxi_2017$PULocationID != 264)
+
+Taxi_2017 <- Taxi_2017 %>%
+  filter(Taxi_2017$DOLocationID != 265)
+
+Taxi_2017 <- Taxi_2017 %>%
+  filter(Taxi_2018$DOLocationID != 264)
+
+Taxi_2017 <- Taxi_2017 %>%
+  filter(Taxi_2017$trip_distance != 0 & 
+           Taxi_2017$fare_amount != 0)
+```
+
+```{r}
+Taxi_2017$passenger_count <- ifelse(Taxi_2017$passenger_count == 0, 1, Taxi_2017$passenger_count)
+```
+
+
+```{r}
+Taxi_2017$fare_amount <- abs(Taxi_2017$fare_amount)
+Taxi_2017$extra <- abs(Taxi_2017$extra)
+Taxi_2017$trip_distance  <- abs(Taxi_2017$trip_distance)
+Taxi_2017$mta_tax <- abs(Taxi_2017$mta_tax)
+Taxi_2017$tolls_amount <- abs(Taxi_2017$tolls_amount)
+Taxi_2017$total_amount <- abs(Taxi_2017$total_amount)
+Taxi_2017$improvement_surcharge <-abs(Taxi_2017$improvement_surcharge)
+Taxi_2017$tip_amount <- abs(Taxi_2017$tip_amount)
+```
+
+
+```{r}
+Taxi_2017$trip_distance <- ifelse(Taxi_2017$trip_distance == 0, (Taxi_2017$fare_amount-2.5)/2.5, Taxi_2017$trip_distance)
+```
+
+
+```{r}
+Taxi_2017$fare_amount <- ifelse(Taxi_2017$fare_amount == 0, (Taxi_2017$trip_distance*2.5)+2.5, Taxi_2017$fare_amount)
+```
+
+```{r}
+write.csv(Taxi_2017, 'taxi_2017.csv')
+```
+
