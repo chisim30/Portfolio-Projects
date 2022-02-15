@@ -6,19 +6,19 @@ We’ve been collecting trip data for ~4 years now, but without a proper analyst
 able to put it to good use. That's where you come in!
 The raw data has some issues, so we'll need to make the following adjustments and assumptions 
 to clean and prep the data:
- Let’s stick to trips that were NOT sent via “store and forward”
- I’m only interested in street-hailed trips paid by card or cash, with a standard rate
- We can remove any trips with dates before 2017 or after 2020, along with any trips with 
+1. Let’s stick to trips that were NOT sent via “store and forward”
+2. I’m only interested in street-hailed trips paid by card or cash, with a standard rate
+3. We can remove any trips with dates before 2017 or after 2020, along with any trips with 
 pickups or drop-offs into unknown zones
- Let’s assume any trips with no recorded passengers had 1 passenger
- If a pickup date/time is AFTER the drop-off date/time, let’s swap them
- We can remove trips lasting longer than a day, and any trips which show both a distance 
+4. Let’s assume any trips with no recorded passengers had 1 passenger
+5. If a pickup date/time is AFTER the drop-off date/time, let’s swap them
+6. We can remove trips lasting longer than a day, and any trips which show both a distance 
 and fare amount of 0
- If you notice any records where the fare, taxes, and surcharges are ALL negative, please 
+7. If you notice any records where the fare, taxes, and surcharges are ALL negative, please 
 make them positive
- For any trips that have a fare amount but have a trip distance of 0, calculate the distance 
+8. For any trips that have a fare amount but have a trip distance of 0, calculate the distance 
 this way: (Fare amount - 2.5) / 2.5
- For any trips that have a trip distance but have a fare amount of 0, calculate the fare 
+9. For any trips that have a trip distance but have a fare amount of 0, calculate the fare 
 amount this way: 2.5 + (trip distance x 2.5)
 Once the data is cleaned up, I’m hoping you can build me a dashboard to help with weekly 
 planning and logistics. For any given fiscal week, I'd like to be able to use historical data to answer 
