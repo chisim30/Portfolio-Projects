@@ -26,9 +26,8 @@ the following questions:
 1. What's the average number of trips we can expect this week?
 2. What's the average fare per trip we expect to collect?
 3. What's the average distance traveled per trip?
-4. How do we expect trip volume to change, relative to last week?
-5. Which days of the week and times of the day will be busiest?
-6. What will likely be the most popular pick-up and drop-off locations?
+4. Which days of the week and times of the day will be busiest?
+5. What will likely be the most popular pick-up and drop-off locations?
 I realize this is a lot to ask for, but this type of analysis will have a huge impact on our business!
 Thanks in advance,
 Marie Jones (Lead Dispatcher, NYC Green Taxis)
