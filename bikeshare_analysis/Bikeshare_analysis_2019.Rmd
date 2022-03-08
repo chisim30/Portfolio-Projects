@@ -153,10 +153,6 @@ bike_trips_2019_v4 <- aggregate(bike_trips_2019_v2$tripduration~bike_trips_2019_
 ```{r Get the Number of rides and average duration for each denomination of riders}
 aggregate(bike_trips_2019_v2$tripduration~bike_trips_2019_v2$member_casual + bike_trips_2019_v2$day_of_the_week, FUN = mean)
 bike_trips_2019_v2 %>% 
-  group_by(member_casual, day_of_the_week) %>%
-  summarise(number_of_rides = n(),
-            average_duration = mean(tripduration))
-bike_trips_2019_v2 %>% 
   group_by(member_casual, month) %>%
   summarise(number_of_rides = n(),
             average_duration = mean(tripduration))
