@@ -1,1 +1,6 @@
+### Introduction
 BikeShare Cyclist a fictional bike transportation company based in Chicago, Illinois is faced with the issue of converting casual bike riders into members. I received a data set which includes members and casual riders transport details for four quarters in the year 2019, with the data provided I was able to perform operations like cleaning, manipulation, analysis and visualization all in R stuido and came up with a recommended solution to the issue they were faced with. This is a perfect example of using data to drive decision-making.
+
+
+### Conclusion
+I noticed Saturday and Sunday are the days with the highest number of rides for the casual group and also within the group of casual riders those days have the highest ride duration, most likely because they use the bikes for things like exercise and leisure activities. Also another thing I noticed in this data set is that in the months synonymous to the summer period the number of casual riders increase as well as the average ride duration of casual riders. I would suggest making discounted prices during the summer period, for incoming members to compel the casual group into subscribing to a membership plan and also creating exercise themed ads to encourage casual riders to become members.
