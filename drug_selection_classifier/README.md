@@ -3,5 +3,15 @@ Imagine that you are a medical researcher compiling data for a study. You have c
 
 Part of your job is to build a model to find out which drug might be appropriate for a future patient with the same illness. The features of this dataset are Age, Sex, Blood Pressure, and the Cholesterol of the patients, and the target is the drug that each patient responded to.
 
+### Data Cleaning
+The data was quite clean already, I just did checks for;
+
+..* check for null/missing values
+..* check for unique values in the categorical variables
+
+
+### Exploratory Data Analysis
+
+
 ### Conclusion
 Using Decision trees I have been able to create  model that can predict the specific drug to give to a patient in a similar condition based on their Age, Blood pressure levels, sodium-potassium pump, and cholesterol levels
