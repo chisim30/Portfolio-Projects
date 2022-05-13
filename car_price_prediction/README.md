@@ -33,7 +33,7 @@ Before the model building commenced, 3 important processes had to be done:
 2. The dataset was split into train and test sets with the test set occupying 20% of the data.
 3. The independent features from the train and test set was normalized using Standard scaler after which the fitted scaler object was also saved using pickle to enable reuse.
 
-I employed Linear Regression and Ridge Regression for this project.
+I employed Linear Regression and Ridge Regression for this project and after much evaluation of both models I determined the Ridge Model was the better choice, because asides from coming out on top in the evaluation it curbs the effects of multicollinearity between our predictor variables.
 
 ### Conclusion
-All predictor variables had a Pearsons coefficient greater than 0.5 and p-values of less than 0.05 which make them useful in our model development. We achieved an r2 and variance of 0.91 and 0.93 respectively, which are both desired values. We performed cros validation on our training data set to obtain a value of 0.0448 making our model more likely to predict actual observations. We also performed Ridge Regression on our model to reduce the effects of multicollinearity on our model.
+All predictor variables had a Pearsons coefficient greater than 0.5 and p-values of less than 0.05 which make them useful in our model development. Between our Linear Regression and Ridge Regression Model, the Ridge mode performed better than Linear, making the Ridge Model our best model to predict car prices.
