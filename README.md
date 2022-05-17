@@ -7,10 +7,16 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 2. Drug prediction for patients using decision trees.
 3. Titanic disaster prediction.
 
+
 ### Data Analytics Projects
 1. Olympics games gender balance.
 2. Cyclist bikeshare (google data analytics capstone project).
 
 
 ### SQL Projects
-Nashville housing data cleaning project.
+1. Nashville housing data cleaning project.
+
+
+### Dashboards
+1. IBM employee attrition dashboard.
+2. Call center performance dashboard.
