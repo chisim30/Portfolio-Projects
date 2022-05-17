@@ -29,10 +29,6 @@ I also had to compare Cholesterol, Blood Pressure and Drug variables with the Ag
 
 ### Model Building
 For this data set I decided Decision Trees would be the best fit for the scenario. First of all I had to assign X  to the predictor variables and Y to the target variable which is 'Drug'. After that I did label encoding on the categorical predictor variables becasue Decision Trees don't work with categorical data. I then fit the model into the decision tree algorithm and ran predcitions.
-But before the model building commenced, 2 important processes had to be done as seen in this notebook:
-
-The categorical independent features had to be encoded to numerical values using Label encoder from sklearn and after encoding, the fitted objects were saved using pickle to enable reuse when trying to prepare the data for predictions.
-The dataset was split into train and test sets with the test set occupying 30% of the data.
 
 ![alt text](https://github.com/chisim30/PortfolioProject/blob/main/drug_selection_classifier/images/tree.png "Logo Title Text 1")
 
