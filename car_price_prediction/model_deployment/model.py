@@ -15,7 +15,7 @@ from sklearn.model_selection import train_test_split
 
 
 # title
-original_title = '<p style="font-family:sans; color:black; font-size: 80px; text-align:center">ehicle</p>'
+original_title = '<p style="font-family:sans; color:white; font-size: 80px; text-align:center">ehicle</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 
 
