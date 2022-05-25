@@ -36,7 +36,7 @@ def set_png_as_page_bg(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
     return
 
-set_png_as_page_bg('car2.jpg')
+set_png_as_page_bg('/car2.jpg')
 
 # title
 original_title = '<p style="font-family:sans; color:black; font-size: 80px; text-align:center">ehicle</p>'
