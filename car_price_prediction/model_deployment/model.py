@@ -18,6 +18,9 @@ from sklearn.model_selection import train_test_split
 original_title = '<p style="font-family:sans; color:white; font-size: 80px; text-align:center">ehicle</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 
+subtitle = '<p style="font-family:sans; color:white; font-size: 40px; text-align:center">... a car price prediction engine</p>'
+st.markdown(subtitle, unsafe_allow_html=True)
+
 
 
 
