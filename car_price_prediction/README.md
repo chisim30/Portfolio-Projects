@@ -35,8 +35,10 @@ Before the model building commenced, 3 important processes had to be done:
 
 I employed Linear Regression and Ridge Regression for this project and after much evaluation of both models I determined the Ridge Model was the better choice, because asides from coming out on top in the evaluation it curbs the effects of multicollinearity between our predictor variables.
 
+### Model Deployment
+Follow this [link](https://share.streamlit.io/chisim30/portfolioproject/main/car_price_prediction/model_deployment/model.py) to test the model with a web application hosted on streamlit.
+
 ### Conclusion
 All predictor variables had a Pearsons coefficient greater than 0.5 and p-values of less than 0.05 which make them useful in our model development. Between our Linear Regression and Ridge Regression Model, the Ridge mode performed better than Linear, making the Ridge Model our best model to predict car prices.
 
-### Model Deployment
-Follow this [link](https://share.streamlit.io/chisim30/portfolioproject/main/car_price_prediction/model_deployment/model.py) to test the model with a web application hosted on streamlit.
+
