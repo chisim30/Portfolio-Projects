@@ -18,9 +18,12 @@ In this stage of the project I did data aggregation and grouping to find trends 
 <img src="https://github.com/chisim30/PortfolioProject/blob/main/Olympics/Images/men.png" width="400" height="300">
 
 
-Another thing I did was to check what sports saw the highest number of female participants. Then finally I checked to see what countries had the most female participants in the games. 
+Another thing I did was to check what sports saw the highest number of female participants. 
 
 <img src="https://github.com/chisim30/PortfolioProject/blob/main/Olympics/Images/sports.png" width="400" height="300">
+
+
+Then finally I checked to see what countries had the most female participants in the games.
 
 ### Conclusion
 The Tokyo 2020 Olympics Games was the first ever gender-balanced Olympic Games, Athletics, Swimming, and Gymnastics are the major sports driving more participation from women at the Games. Countries like the United States of America, Great Britain, France, Netherlands, Japan, China, Italy and Germany are the leading countries when it comes to women's participation in the Games.
