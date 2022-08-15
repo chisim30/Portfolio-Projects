@@ -80,5 +80,15 @@ There is a clear difference between the ride duration of Casual and Subscriber r
 riders spend around 700 seconds on average during trips, while Casual riders spend 2,000 seconds
 on average during trips.
 
-### Conclusion
-I noticed Saturday and Sunday are the days with the highest number of rides for the casual group and also within the group of casual riders those days have the highest ride duration, most likely because they use the bikes for things like exercise and leisure activities. Also another thing I noticed in this data set is that in the months synonymous to the summer period the number of casual riders increase as well as the average ride duration of casual riders. I would suggest making discounted prices during the summer period, for incoming members to compel the casual group into subscribing to a membership plan and also creating exercise themed ads to encourage casual riders to become members.
+### Act
+The objective of this portion of the project is to make decisions based on the findings from our
+analysis. My stakeholder has asked for 3 data driven suggestions that can see Customer riders
+become subscribers.
+1. The marketing team can aid in developing advertisements meant to captivate Casual riders
+to obtain subscriptions. From the data I would think a summer and weekend themed advert
+would be the best angle to explore.
+13
+2. Discounts and Free trials should be explored as an option to reduce the number of Casual
+riders.
+3. Create exciting competitions on social media as a means to create awareness to potential
+subscribers.
