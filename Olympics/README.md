@@ -9,7 +9,18 @@ There are 2 separate data sets used for this project, the first contains athlete
 4. Filter important data specific for analysis.
 
 ### Data Analysis
-In this stage of the project I did data aggregation and grouping to find trends in womens participation in the games over the years and compared the results with that of the men. One more thing I did was to check what sports saw the highest number of female participants. Then finally I checked to see what countries had the most female participants in the games. 
+In this stage of the project I did data aggregation and grouping to find trends in womens participation in the games over the years and compared the results with that of the men.
+
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/Olympics/Images/women.png" width="400" height="300">
+
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/Olympics/Images/men.png" width="400" height="300">
+
+
+Another thing I did was to check what sports saw the highest number of female participants. Then finally I checked to see what countries had the most female participants in the games. 
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/Olympics/Images/sports.png" width="400" height="300">
 
 ### Conclusion
 The Tokyo 2020 Olympics Games was the first ever gender-balanced Olympic Games, Athletics, Swimming, and Gymnastics are the major sports driving more participation from women at the Games. Countries like the United States of America, Great Britain, France, Netherlands, Japan, China, Italy and Germany are the leading countries when it comes to women's participation in the Games.
