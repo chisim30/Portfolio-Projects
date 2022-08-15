@@ -37,7 +37,48 @@ which I will visualize in the Share phase of this project.
 The Share phase of this project includes making visuals from my analysis that help stakeholders
 understand my findings.
 
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/count.png" width="400" height="200">
 
+As expected the number of subscriber riders exceed that of the casual riders, I did some aggregation
+to discover behaviors between the two categories.
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/tripduration1.png" width="400" height="200">
+
+Suprising to see that customer(casual) riders spend more time on average riding bikes than subscriber
+riders
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/month1.png" width="400" height="200">
+
+In the months of June, July, August and September Casual riders were more than Subscribers,
+but from October to December the Subsctibers were almost double the amount of Casual in every
+month.
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/dow1.png" width="400" height="200">
+
+On the week days Subscriber riders spend more time on bikes than Casual riders, while in the
+weekend Casual riders double Subscribers numbers.
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/dow2.png" width="400" height="200">
+
+Casual riders spend more time on bikes every day of the week than Subscribers, even though there
+are more Subscriber riders in the week day than Casual riders.
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/month2.png" width="400" height="200">
+
+On average Casual riders spend more time on bikes than Subscriber riders in every month, in many
+instances they even spend double the times of Subscribers.
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/hour1.png" width="400" height="200">
+
+From the hours between 08:00 - 20:00 there’s a rise in the number of Casual riders, while for the
+Subscribers most use comes between 06:00 - 09:00, 11:00 - 14:00 and then again between 16:00 -
+19:00.
+
+<img src="https://github.com/chisim30/PortfolioProject/blob/main/bikeshare_analysis/Images/hour2.png" width="400" height="200">
+
+There is a clear difference between the ride duration of Casual and Subscriber riders, Subscriber
+riders spend around 700 seconds on average during trips, while Casual riders spend 2,000 seconds
+on average during trips.
 
 ### Conclusion
 I noticed Saturday and Sunday are the days with the highest number of rides for the casual group and also within the group of casual riders those days have the highest ride duration, most likely because they use the bikes for things like exercise and leisure activities. Also another thing I noticed in this data set is that in the months synonymous to the summer period the number of casual riders increase as well as the average ride duration of casual riders. I would suggest making discounted prices during the summer period, for incoming members to compel the casual group into subscribing to a membership plan and also creating exercise themed ads to encourage casual riders to become members.
