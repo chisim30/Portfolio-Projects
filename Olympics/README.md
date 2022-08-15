@@ -26,5 +26,6 @@ Another thing I did was to check what sports saw the highest number of female pa
 Finally, I checked to see what countries had the most female participants in the games.
 
 <img src="https://github.com/chisim30/PortfolioProject/blob/main/Olympics/Images/country.png" width="400" height="300">
+
 ### Conclusion
 The Tokyo 2020 Olympics Games was the first ever gender-balanced Olympic Games, Athletics, Swimming, and Gymnastics are the major sports driving more participation from women at the Games. Countries like the United States of America, Great Britain, France, Netherlands, Japan, China, Canada, Italy, Australia and Germany are the leading countries when it comes to women's participation in the Games.
