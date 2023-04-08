@@ -18,5 +18,4 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 
 
 ### Dashboards
-1. IBM employee attrition dashboard.
-2. Call center performance dashboard.
+1. NBA Dashoard (coming soon)
