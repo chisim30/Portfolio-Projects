@@ -9,7 +9,7 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 
 ### Data Analytics Projects
 1. Olympics games gender balance.
-2. Cyclist bikeshare
+2. Cyclist Bike-Share Customer Analysis
 
 
 ### SQL Projects
