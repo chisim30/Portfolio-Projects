@@ -5,7 +5,6 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 ### Data Science Projects
 1. Car prices prediction using multiple linear regression.
 2. Drug prediction for patients using decision trees.
-3. Titanic disaster prediction.
 
 
 ### Data Analytics Projects
