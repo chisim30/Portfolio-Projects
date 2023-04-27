@@ -17,4 +17,5 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 
 
 ### Dashboards
-1. NBA Dashoard (coming soon)
+1. NBA Dashoard
+2. Gender Balance at the Olympics (Coming Soon)
