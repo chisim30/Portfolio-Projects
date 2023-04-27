@@ -17,5 +17,5 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 
 
 ### Dashboards
-1. NBA Dashoard
+1. History of the First Overall Draft Pick in the NBA
 2. Gender Balance at the Olympics (Coming Soon)
