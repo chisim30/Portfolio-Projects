@@ -8,7 +8,7 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 
 
 ### Data Analytics Projects
-1. Olympic games gender balance.
+1. Olympic Games gender balance.
 2. Cyclist Bike-Share Customer Analysis
 
 
@@ -18,4 +18,6 @@ My name is Chisimdiri Anyaogu and I am a graduate of Covenant University with a 
 
 ### Dashboards
 1. History of the First Overall Draft Pick in the NBA
-2. Gender Balance at the Olympics (Coming Soon)
+2. Gender Balance at the Olympics 
+3. Prequels vs Sequels Dashboard
+4. Cyclist Bike-Share Analysis
