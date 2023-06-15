@@ -1,4 +1,4 @@
-## Links to Tableau Public dashboard
+## Links to Tableau Public dashboards
 1. [Movie Sequels](https://public.tableau.com/app/profile/chisimdiri.anyaogu/viz/MovieSequels/Dashboard2_1)
 2. [History of the First Overall NBA Draft Pick](https://public.tableau.com/app/profile/chisimdiri.anyaogu/viz/HistoryofFirstOverallNBADraftPick/Dashboard1)
 3. [Gender Balance at the Olympic Games](https://public.tableau.com/app/profile/chisimdiri.anyaogu/viz/GenderBalanceattheOlympicGames/Dashboard1)
